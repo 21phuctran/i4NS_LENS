@@ -1,0 +1,128 @@
+
+NAVAL DOCTRINE - SAMPLE TRAINING MANUAL
+========================================
+
+CHAPTER 1: SPEED CHANGES
+------------------------
+
+1.1 Standard Operating Procedures for Speed Changes
+
+When changing speed during operations:
+- All speed changes must be logged with timestamp and tracking number
+- Changes exceeding 5 knots must be communicated to all stations
+- Speed reductions for man overboard drills must follow emergency protocols:
+  * Reduce speed to 5 knots immediately
+  * Maintain heading until search pattern initiated
+  * Log all actions with timestamps
+
+1.2 Speed Change Documentation
+
+Required documentation for speed changes:
+- Timestamp of change (UTC)
+- Previous speed
+- New speed
+- Reason for change
+- Tracking number for reference
+
+
+CHAPTER 2: COURSE CHANGES
+--------------------------
+
+2.1 Course Change Protocols
+
+When changing course:
+- Log timestamp, previous course, new course
+- Assign tracking number to maneuver
+- Notify navigation team of all course changes > 10 degrees
+- For training exercises, document reasoning for tactical review
+
+
+CHAPTER 3: CONTACT DETECTION AND TRACKING
+------------------------------------------
+
+3.1 Surface Contact Detection
+
+Upon detecting surface contact:
+- Immediately assign tracking number
+- Log bearing, range, and timestamp
+- Classify contact type (merchant, military, unknown)
+- Maintain continuous tracking until contact passes
+- Document all detection events for post-mission analysis
+
+3.2 Contact Classification Requirements
+
+All contacts must be classified according to:
+- Visual identification when possible
+- Radar signature analysis
+- AIS data (when available)
+- Behavior patterns
+
+Contact classification must be documented with:
+- Tracking number
+- Timestamp of detection
+- Initial classification
+- Confidence level
+
+
+CHAPTER 4: MAN OVERBOARD PROCEDURES
+------------------------------------
+
+4.1 Immediate Actions
+
+Upon man overboard:
+- Sound alarm immediately
+- Reduce speed to 5 knots
+- Mark position with GPS timestamp
+- Deploy recovery equipment
+- Initiate search pattern
+
+All man overboard drills and actual events must be logged with:
+- Exact timestamp
+- Position (latitude/longitude)
+- Sea conditions
+- Recovery time
+- Lessons learned
+
+
+CHAPTER 5: MISSION START AND END PROCEDURES
+--------------------------------------------
+
+5.1 Mission Commencement
+
+At mission start:
+- Log start time (UTC)
+- Record initial position
+- Document mission objectives
+- Verify all systems operational
+- Begin mission log with tracking number
+
+5.2 Mission Completion
+
+At mission end:
+- Log completion time
+- Record final position
+- Document mission outcomes
+- Prepare post-mission debrief
+- Submit mission log for review
+
+
+CHAPTER 6: POST-MISSION DEBRIEFING
+-----------------------------------
+
+6.1 Debrief Requirements
+
+All missions require post-mission debrief covering:
+- Timeline of significant events
+- Comparison of planned vs actual actions
+- Doctrine compliance review
+- Lessons learned
+- Recommendations for future operations
+
+6.2 Lessons Learned Documentation
+
+Document lessons learned including:
+- What worked well
+- What could be improved
+- Doctrinal gaps identified
+- Training recommendations
+- Equipment performance issues

@@ -1,0 +1,202 @@
+{
+  "mission_id": "MISSION-2024-NOV-047",
+  "mission_name": "Pacific Training Exercise - Alpha Strike",
+  "vessel_name": "USS Gerald R. Ford (CVN-78)",
+  "start_time": "2024-11-14T06:00:00Z",
+  "end_time": "2024-11-14T18:30:00Z",
+  "events": [
+    {
+      "timestamp": "2024-11-14T06:00:00Z",
+      "event_type": "mission_start",
+      "description": "Mission commenced - Alpha Strike training exercise",
+      "speed": 0.0,
+      "course": 0.0,
+      "latitude": 21.3099,
+      "longitude": -157.8581,
+      "tracking_number": "TRK-START-001"
+    },
+    {
+      "timestamp": "2024-11-14T06:15:00Z",
+      "event_type": "speed_change",
+      "description": "Increased speed to 12 knots for transit to exercise area",
+      "speed": 12.0,
+      "course": 45.0,
+      "latitude": 21.3150,
+      "longitude": -157.8500,
+      "tracking_number": "TRK-002"
+    },
+    {
+      "timestamp": "2024-11-14T07:00:00Z",
+      "event_type": "contact_detection",
+      "description": "Surface contact detected bearing 090, range 8000 yards",
+      "speed": 12.0,
+      "course": 45.0,
+      "tracking_number": "TRK-CONTACT-003",
+      "metadata": {
+        "bearing": 90,
+        "range": 8000,
+        "classification": "merchant",
+        "confidence": "high"
+      }
+    },
+    {
+      "timestamp": "2024-11-14T07:30:00Z",
+      "event_type": "course_change",
+      "description": "Changed course to 120 degrees to avoid merchant traffic",
+      "speed": 12.0,
+      "course": 120.0,
+      "latitude": 21.4200,
+      "longitude": -157.7800,
+      "tracking_number": "TRK-004"
+    },
+    {
+      "timestamp": "2024-11-14T08:00:00Z",
+      "event_type": "speed_change",
+      "description": "Increased speed to 20 knots entering exercise area",
+      "speed": 20.0,
+      "course": 120.0,
+      "latitude": 21.4800,
+      "longitude": -157.7200,
+      "tracking_number": "TRK-005"
+    },
+    {
+      "timestamp": "2024-11-14T09:15:00Z",
+      "event_type": "contact_detection",
+      "description": "Aircraft contact detected bearing 270, altitude 5000 feet",
+      "speed": 20.0,
+      "course": 120.0,
+      "tracking_number": "TRK-AIR-006",
+      "metadata": {
+        "bearing": 270,
+        "range": 15000,
+        "altitude": 5000,
+        "classification": "friendly_fighter",
+        "confidence": "confirmed"
+      }
+    },
+    {
+      "timestamp": "2024-11-14T10:00:00Z",
+      "event_type": "course_change",
+      "description": "Changed course to 180 degrees for strike exercise phase",
+      "speed": 20.0,
+      "course": 180.0,
+      "latitude": 21.6000,
+      "longitude": -157.6500,
+      "tracking_number": "TRK-007"
+    },
+    {
+      "timestamp": "2024-11-14T11:30:00Z",
+      "event_type": "speed_change",
+      "description": "Reduced speed to 8 knots for recovery operations",
+      "speed": 8.0,
+      "course": 180.0,
+      "latitude": 21.7500,
+      "longitude": -157.6500,
+      "tracking_number": "TRK-008"
+    },
+    {
+      "timestamp": "2024-11-14T12:00:00Z",
+      "event_type": "man_overboard",
+      "description": "Man overboard drill initiated - reduced speed to 5 knots",
+      "speed": 5.0,
+      "course": 180.0,
+      "latitude": 21.7800,
+      "longitude": -157.6500,
+      "tracking_number": "TRK-MOB-009",
+      "metadata": {
+        "drill_type": "scheduled",
+        "recovery_time_minutes": 12
+      }
+    },
+    {
+      "timestamp": "2024-11-14T12:15:00Z",
+      "event_type": "speed_change",
+      "description": "Increased speed to 15 knots after successful recovery drill",
+      "speed": 15.0,
+      "course": 180.0,
+      "latitude": 21.7850,
+      "longitude": -157.6500,
+      "tracking_number": "TRK-010"
+    },
+    {
+      "timestamp": "2024-11-14T13:00:00Z",
+      "event_type": "contact_detection",
+      "description": "Submarine contact detected bearing 045, depth 200 feet",
+      "speed": 15.0,
+      "course": 180.0,
+      "tracking_number": "TRK-SUB-011",
+      "metadata": {
+        "bearing": 45,
+        "range": 3000,
+        "depth": 200,
+        "classification": "friendly_submarine",
+        "confidence": "high"
+      }
+    },
+    {
+      "timestamp": "2024-11-14T14:30:00Z",
+      "event_type": "course_change",
+      "description": "Changed course to 270 degrees for return transit",
+      "speed": 15.0,
+      "course": 270.0,
+      "latitude": 21.9000,
+      "longitude": -157.6500,
+      "tracking_number": "TRK-012"
+    },
+    {
+      "timestamp": "2024-11-14T15:00:00Z",
+      "event_type": "speed_change",
+      "description": "Increased speed to 18 knots for return transit",
+      "speed": 18.0,
+      "course": 270.0,
+      "latitude": 21.9200,
+      "longitude": -157.7000,
+      "tracking_number": "TRK-013"
+    },
+    {
+      "timestamp": "2024-11-14T16:45:00Z",
+      "event_type": "contact_detection",
+      "description": "Multiple surface contacts detected bearing 315, range 12000 yards",
+      "speed": 18.0,
+      "course": 270.0,
+      "tracking_number": "TRK-MULTI-014",
+      "metadata": {
+        "bearing": 315,
+        "range": 12000,
+        "contact_count": 3,
+        "classification": "merchant_convoy",
+        "confidence": "medium"
+      }
+    },
+    {
+      "timestamp": "2024-11-14T17:30:00Z",
+      "event_type": "speed_change",
+      "description": "Reduced speed to 10 knots approaching port",
+      "speed": 10.0,
+      "course": 270.0,
+      "latitude": 21.3500,
+      "longitude": -157.8200,
+      "tracking_number": "TRK-015"
+    },
+    {
+      "timestamp": "2024-11-14T18:00:00Z",
+      "event_type": "course_change",
+      "description": "Changed course to 320 degrees for port approach",
+      "speed": 10.0,
+      "course": 320.0,
+      "latitude": 21.3200,
+      "longitude": -157.8400,
+      "tracking_number": "TRK-016"
+    },
+    {
+      "timestamp": "2024-11-14T18:30:00Z",
+      "event_type": "mission_end",
+      "description": "Mission completed - returned to port, all objectives achieved",
+      "speed": 5.0,
+      "course": 320.0,
+      "latitude": 21.3099,
+      "longitude": -157.8581,
+      "tracking_number": "TRK-END-017"
+    }
+  ]
+}

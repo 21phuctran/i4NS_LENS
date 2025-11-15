@@ -1,0 +1,17 @@
+fastapi>=0.104.1
+uvicorn>=0.24.0
+langchain>=0.1.0
+langchain-community>=0.0.13
+langchain-core>=0.1.10
+langgraph>=0.0.20
+faiss-cpu>=1.8.0
+PyPDF2>=3.0.1
+python-multipart>=0.0.6
+pydantic>=2.5.0
+tiktoken>=0.5.2
+pandas>=2.1.4
+python-dotenv>=1.0.0
+
+# For local LLM support (offline) - optional
+# llama-cpp-python>=0.2.27
+sentence-transformers>=2.2.2
