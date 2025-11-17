@@ -3,7 +3,7 @@ import axios from 'axios'
 import { format } from 'date-fns'
 import './DashboardFrame.css'
 
-function DashboardFrame({ analysis, previousMissions, onBack }) {
+function DashboardFrame({ analysis, previousMissions, onBack, onMissionSelect }) {
   const [chatInput, setChatInput] = useState('')
   const [chatHistory, setChatHistory] = useState([])
   const [isLoadingChat, setIsLoadingChat] = useState(false)
@@ -52,26 +52,9 @@ function DashboardFrame({ analysis, previousMissions, onBack }) {
     }
   }
 
-  // Get severity color
-  const getSeverityColor = (severity) => {
-    const colors = {
-      critical: '#dc2626',
-      major: '#f59e0b',
-      minor: '#3b82f6',
-      info: '#10b981'
-    }
-    return colors[severity] || colors.info
-  }
-
-  // Get compliance color
+  // Get compliance color - simplified to green/red only
   const getComplianceColor = (status) => {
-    const colors = {
-      compliant: '#10b981',
-      partial: '#f59e0b',
-      'non-compliant': '#dc2626',
-      unclear: '#94a3b8'
-    }
-    return colors[status] || colors.unclear
+    return status === 'compliant' ? '#10b981' : '#dc2626'
   }
 
   return (
@@ -84,7 +67,6 @@ function DashboardFrame({ analysis, previousMissions, onBack }) {
         {/* Left Panel: Previous Missions */}
         <div className="previous-missions-panel">
           <div className="panel-header">
-            <div className="icon-plus">+</div>
             <h3>Previous Missions</h3>
           </div>
 
@@ -93,7 +75,11 @@ function DashboardFrame({ analysis, previousMissions, onBack }) {
               <p className="no-missions">No previous missions</p>
             ) : (
               previousMissions.map((mission, idx) => (
-                <div key={idx} className="mission-card">
+                <div
+                  key={idx}
+                  className={`mission-card ${mission.mission_id === analysis.mission_id ? 'active' : ''}`}
+                  onClick={() => onMissionSelect && onMissionSelect(mission.mission_id)}
+                >
                   <div className="mission-name">{mission.mission_name}</div>
                   <div className="mission-meta">
                     <span className="mission-id">{mission.mission_id}</span>
@@ -138,7 +124,7 @@ function DashboardFrame({ analysis, previousMissions, onBack }) {
                           className="compliance-indicator"
                           style={{ background: getComplianceColor(comparison.compliance_status) }}
                         >
-                          {comparison.compliance_status}
+                          {comparison.compliance_status === 'compliant' ? '✓ Follows Doctrine' : '✗ Does Not Follow'}
                         </span>
                       </div>
 
@@ -155,15 +141,6 @@ function DashboardFrame({ analysis, previousMissions, onBack }) {
                         <div className="analysis-text">
                           {comparison.analysis}
                         </div>
-
-                        {comparison.severity && (
-                          <div
-                            className="severity-badge"
-                            style={{ borderColor: getSeverityColor(comparison.severity) }}
-                          >
-                            {comparison.severity.toUpperCase()}
-                          </div>
-                        )}
                       </div>
                     </div>
                   </div>

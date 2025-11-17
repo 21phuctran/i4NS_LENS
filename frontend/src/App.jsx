@@ -6,22 +6,32 @@ import './App.css'
 function App() {
   const [currentView, setCurrentView] = useState('upload') // 'upload' or 'dashboard'
   const [currentAnalysis, setCurrentAnalysis] = useState(null)
-  const [previousMissions, setPreviousMissions] = useState([])
+  const [allAnalyses, setAllAnalyses] = useState([]) // Store all full analyses
 
   const handleAnalysisComplete = (analysis) => {
     setCurrentAnalysis(analysis)
-    setPreviousMissions(prev => [...prev, {
-      mission_id: analysis.mission_id,
-      mission_name: analysis.mission_name,
-      timestamp: new Date().toISOString(),
-      compliance_score: analysis.overall_compliance_score
-    }])
+    setAllAnalyses(prev => [...prev, analysis])
     setCurrentView('dashboard')
+  }
+
+  const handleMissionSelect = (missionId) => {
+    const selectedAnalysis = allAnalyses.find(a => a.mission_id === missionId)
+    if (selectedAnalysis) {
+      setCurrentAnalysis(selectedAnalysis)
+    }
   }
 
   const handleBackToUpload = () => {
     setCurrentView('upload')
   }
+
+  // Create previous missions list from all analyses
+  const previousMissions = allAnalyses.map(analysis => ({
+    mission_id: analysis.mission_id,
+    mission_name: analysis.mission_name,
+    timestamp: new Date().toISOString(),
+    compliance_score: analysis.overall_compliance_score
+  }))
 
   return (
     <div className="app">
@@ -45,6 +55,7 @@ function App() {
             analysis={currentAnalysis}
             previousMissions={previousMissions}
             onBack={handleBackToUpload}
+            onMissionSelect={handleMissionSelect}
           />
         )}
       </main>

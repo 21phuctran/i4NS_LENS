@@ -223,40 +223,50 @@ class MissionAnalysisRAG:
         event: MissionEvent,
         expected_action: str
     ) -> str:
-        """Determine if action complies with doctrine"""
-
-        # Simple rule-based compliance check
-        # In production, use LLM for more nuanced analysis
+        """Determine if action complies with doctrine - Simple green/red system"""
 
         has_tracking = event.tracking_number is not None
         has_timestamp = event.timestamp is not None
 
+        # Simplified: either compliant (green) or non-compliant (red)
         if event.event_type == "speed_change":
+            # Must have tracking number, timestamp, and speed data
             if has_tracking and has_timestamp and event.speed is not None:
                 return "compliant"
-            elif has_timestamp:
-                return "partial"
             else:
                 return "non-compliant"
 
         elif event.event_type == "contact_detection":
+            # Must have tracking number and timestamp
             if has_tracking and has_timestamp:
                 return "compliant"
             else:
                 return "non-compliant"
 
-        # Default to unclear if we can't determine
-        return "unclear"
+        elif event.event_type == "course_change":
+            # Must have tracking number, timestamp, and course data
+            if has_tracking and has_timestamp and event.course is not None:
+                return "compliant"
+            else:
+                return "non-compliant"
+
+        elif event.event_type == "man_overboard":
+            # Must have tracking number and timestamp
+            if has_tracking and has_timestamp:
+                return "compliant"
+            else:
+                return "non-compliant"
+
+        # Default: if has basic tracking, compliant
+        if has_tracking and has_timestamp:
+            return "compliant"
+        else:
+            return "non-compliant"
 
     def _determine_severity(self, compliance_status: str) -> str:
-        """Determine severity based on compliance"""
-        severity_map = {
-            "compliant": "info",
-            "partial": "minor",
-            "non-compliant": "major",
-            "unclear": "minor"
-        }
-        return severity_map.get(compliance_status, "minor")
+        """Determine severity - simplified to just show compliance"""
+        # Not used in simplified version, but keeping for compatibility
+        return None
 
     def _generate_event_analysis(
         self,
@@ -268,26 +278,18 @@ class MissionAnalysisRAG:
         """Generate analysis text for an event"""
 
         if compliance == "compliant":
-            return f"Event '{event.event_type}' was properly documented with all required information including tracking number and timestamp. This follows doctrine requirements."
-
-        elif compliance == "partial":
-            return f"Event '{event.event_type}' was logged but missing some required information (e.g., tracking number). Recommend ensuring all events include complete documentation per doctrine."
-
-        elif compliance == "non-compliant":
-            return f"Event '{event.event_type}' did not meet doctrine requirements. Missing critical information such as tracking number or complete timestamp data. This should be addressed in future operations."
-
+            return f"✓ Follows doctrine: Event properly documented with tracking number and required data."
         else:
-            return f"Unable to fully determine compliance for event '{event.event_type}'. Recommend manual review against doctrine requirements."
+            return f"✗ Does not follow doctrine: Missing required information (tracking number, timestamp, or event-specific data)."
 
     def _generate_summary_node(self, state: AnalysisState) -> dict:
         """Generate overall mission summary and lessons learned"""
         comparison_results = state.get("comparison_results", [])
         mission_log = state["mission_log"]
 
-        # Calculate compliance statistics
+        # Calculate compliance statistics - simplified to green/red only
         total_events = len(comparison_results)
         compliant = sum(1 for c in comparison_results if c.compliance_status == "compliant")
-        partial = sum(1 for c in comparison_results if c.compliance_status == "partial")
         non_compliant = sum(1 for c in comparison_results if c.compliance_status == "non-compliant")
 
         compliance_score = (compliant / total_events * 100) if total_events > 0 else 0
@@ -296,9 +298,8 @@ class MissionAnalysisRAG:
         summary = f"""Mission Analysis Summary for {mission_log.mission_name}
 
 Total Events Analyzed: {total_events}
-Compliant: {compliant} ({compliant/total_events*100:.1f}% if total_events > 0 else 0)
-Partial Compliance: {partial}
-Non-Compliant: {non_compliant}
+✓ Follows Doctrine: {compliant} ({compliant/total_events*100:.1f}% if total_events > 0 else 0)
+✗ Does Not Follow: {non_compliant} ({non_compliant/total_events*100:.1f}% if total_events > 0 else 0)
 Overall Compliance Score: {compliance_score:.1f}%
 
 The mission was conducted aboard {mission_log.vessel_name} from {mission_log.start_time} to {mission_log.end_time or 'ongoing'}.
@@ -308,20 +309,20 @@ The mission was conducted aboard {mission_log.vessel_name} from {mission_log.sta
         lessons_learned = []
         if non_compliant > 0:
             lessons_learned.append(
-                f"{non_compliant} events did not meet doctrine requirements - ensure proper documentation procedures are followed"
-            )
-        if partial > 0:
-            lessons_learned.append(
-                f"{partial} events had partial compliance - review checklist for complete event logging"
+                f"{non_compliant} event(s) did not meet doctrine requirements - ensure proper documentation with tracking numbers and timestamps"
             )
         if compliant == total_events:
             lessons_learned.append(
                 "All events properly documented according to doctrine - excellent adherence to procedures"
             )
+        elif compliant > 0:
+            lessons_learned.append(
+                f"{compliant} event(s) followed doctrine correctly - maintain this standard for all operations"
+            )
 
         # Generate recommendations
         recommendations = []
-        if non_compliant > 0 or partial > 0:
+        if non_compliant > 0:
             recommendations.append("Conduct refresher training on event documentation requirements")
             recommendations.append("Implement pre-mission checklist review of documentation procedures")
 

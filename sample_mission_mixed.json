@@ -1,0 +1,167 @@
+{
+  "mission_id": "MISSION-2024-NOV-048",
+  "mission_name": "Coastal Patrol - Training Exercise Bravo",
+  "vessel_name": "USS Independence (LCS-2)",
+  "start_time": "2024-11-15T05:00:00Z",
+  "end_time": "2024-11-15T14:00:00Z",
+  "events": [
+    {
+      "timestamp": "2024-11-15T05:00:00Z",
+      "event_type": "mission_start",
+      "description": "Mission commenced - Coastal patrol exercise",
+      "speed": 0.0,
+      "course": 0.0,
+      "latitude": 32.7157,
+      "longitude": -117.1611,
+      "tracking_number": "TRK-START-001"
+    },
+    {
+      "timestamp": "2024-11-15T05:20:00Z",
+      "event_type": "speed_change",
+      "description": "Increased speed to 18 knots for patrol route",
+      "speed": 18.0,
+      "course": 270.0,
+      "latitude": 32.7200,
+      "longitude": -117.1800
+    },
+    {
+      "timestamp": "2024-11-15T06:00:00Z",
+      "event_type": "contact_detection",
+      "description": "Unidentified vessel detected bearing 315",
+      "speed": 18.0,
+      "course": 270.0,
+      "tracking_number": "TRK-CONTACT-002",
+      "metadata": {
+        "bearing": 315,
+        "range": 6000,
+        "classification": "unknown"
+      }
+    },
+    {
+      "timestamp": "2024-11-15T06:30:00Z",
+      "event_type": "course_change",
+      "description": "Changed course to 315 to investigate contact",
+      "speed": 18.0,
+      "course": 315.0,
+      "latitude": 32.8000,
+      "longitude": -117.2500,
+      "tracking_number": "TRK-003"
+    },
+    {
+      "timestamp": "2024-11-15T07:15:00Z",
+      "event_type": "speed_change",
+      "description": "Reduced speed to 10 knots approaching contact",
+      "speed": 10.0,
+      "course": 315.0,
+      "latitude": 32.8500,
+      "longitude": -117.3000,
+      "tracking_number": "TRK-004"
+    },
+    {
+      "timestamp": "2024-11-15T08:00:00Z",
+      "event_type": "contact_detection",
+      "description": "Second surface contact detected",
+      "speed": 10.0,
+      "course": 315.0,
+      "metadata": {
+        "bearing": 45,
+        "range": 4000,
+        "classification": "fishing_vessel"
+      }
+    },
+    {
+      "timestamp": "2024-11-15T08:45:00Z",
+      "event_type": "course_change",
+      "description": "Changed course to 180 returning to patrol route",
+      "speed": 10.0,
+      "course": 180.0,
+      "latitude": 32.9000,
+      "longitude": -117.3500
+    },
+    {
+      "timestamp": "2024-11-15T09:30:00Z",
+      "event_type": "speed_change",
+      "description": "Increased speed to 22 knots",
+      "speed": 22.0,
+      "course": 180.0,
+      "latitude": 32.8500,
+      "longitude": -117.3500,
+      "tracking_number": "TRK-005"
+    },
+    {
+      "timestamp": "2024-11-15T10:00:00Z",
+      "event_type": "man_overboard",
+      "description": "Man overboard drill initiated",
+      "speed": 5.0,
+      "course": 180.0,
+      "latitude": 32.8000,
+      "longitude": -117.3500,
+      "metadata": {
+        "drill_type": "scheduled",
+        "recovery_time_minutes": 15
+      }
+    },
+    {
+      "timestamp": "2024-11-15T10:30:00Z",
+      "event_type": "speed_change",
+      "description": "Speed increased after drill completion",
+      "speed": 15.0,
+      "course": 180.0,
+      "latitude": 32.7900,
+      "longitude": -117.3500,
+      "tracking_number": "TRK-006"
+    },
+    {
+      "timestamp": "2024-11-15T11:00:00Z",
+      "event_type": "contact_detection",
+      "description": "Aircraft contact overhead",
+      "speed": 15.0,
+      "course": 180.0,
+      "tracking_number": "TRK-AIR-007",
+      "metadata": {
+        "bearing": 0,
+        "altitude": 1000,
+        "classification": "friendly_helicopter"
+      }
+    },
+    {
+      "timestamp": "2024-11-15T11:45:00Z",
+      "event_type": "course_change",
+      "description": "Course adjusted to 90 degrees",
+      "speed": 15.0,
+      "course": 90.0,
+      "latitude": 32.7500,
+      "longitude": -117.3500,
+      "tracking_number": "TRK-008"
+    },
+    {
+      "timestamp": "2024-11-15T12:30:00Z",
+      "event_type": "speed_change",
+      "description": "Reduced speed for port approach",
+      "speed": 8.0,
+      "course": 90.0,
+      "latitude": 32.7300,
+      "longitude": -117.2000
+    },
+    {
+      "timestamp": "2024-11-15T13:00:00Z",
+      "event_type": "course_change",
+      "description": "Final approach to port",
+      "speed": 8.0,
+      "course": 45.0,
+      "latitude": 32.7200,
+      "longitude": -117.1800,
+      "tracking_number": "TRK-009"
+    },
+    {
+      "timestamp": "2024-11-15T14:00:00Z",
+      "event_type": "mission_end",
+      "description": "Mission completed, returned to port",
+      "speed": 3.0,
+      "course": 45.0,
+      "latitude": 32.7157,
+      "longitude": -117.1611,
+      "tracking_number": "TRK-END-010"
+    }
+  ]
+}
