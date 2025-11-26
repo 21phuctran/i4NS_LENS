@@ -1,0 +1,207 @@
+{
+  "mission_id": "TAO-DIALOG-001",
+  "mission_name": "TAO Bridge Communications - Exercise Neptune",
+  "vessel": "USS Constellation (FFG-62)",
+  "commanding_officer": "CDR Sarah Mitchell",
+  "start_time": "2024-03-15T06:00:00Z",
+  "end_time": "2024-03-15T14:30:00Z",
+  "mission_type": "Anti-Submarine Warfare Exercise",
+  "events": [
+    {
+      "timestamp": "2024-03-15T06:15:00Z",
+      "event_type": "communication",
+      "description": "TAO to Bridge: Request permission to set Condition III wartime steaming",
+      "speaker": "TAO",
+      "recipient": "Bridge",
+      "tracking_number": "TAO-001",
+      "response": "Bridge: Permission granted, set Condition III"
+    },
+    {
+      "timestamp": "2024-03-15T06:18:00Z",
+      "event_type": "status_change",
+      "description": "Condition III wartime steaming set throughout the ship",
+      "tracking_number": "TAO-002",
+      "previous_status": "Condition IV",
+      "new_status": "Condition III"
+    },
+    {
+      "timestamp": "2024-03-15T07:22:00Z",
+      "event_type": "communication",
+      "description": "TAO to CO: Sonar contact bearing 045, range 8000 yards, classified possible submarine",
+      "speaker": "TAO",
+      "recipient": "CO",
+      "tracking_number": "TAO-003",
+      "contact_designation": "Sierra-1"
+    },
+    {
+      "timestamp": "2024-03-15T07:24:00Z",
+      "event_type": "communication",
+      "description": "CO to TAO: Track and report, maintain passive sonar only",
+      "speaker": "CO",
+      "recipient": "TAO",
+      "tracking_number": "TAO-004"
+    },
+    {
+      "timestamp": "2024-03-15T07:30:00Z",
+      "event_type": "speed_change",
+      "description": "Speed reduced to minimize own-ship noise for sonar operations",
+      "speed": 8,
+      "previous_speed": 15,
+      "tracking_number": "TAO-005",
+      "ordered_by": "TAO"
+    },
+    {
+      "timestamp": "2024-03-15T07:45:00Z",
+      "event_type": "communication",
+      "description": "TAO: Sierra-1 now bearing 042, range 6500 yards, contact strengthening",
+      "speaker": "TAO",
+      "recipient": "CO",
+      "tracking_number": null,
+      "notes": "Verbal report without formal tracking - VIOLATION"
+    },
+    {
+      "timestamp": "2024-03-15T07:48:00Z",
+      "event_type": "communication",
+      "description": "CO to TAO: Recommend course of action",
+      "speaker": "CO",
+      "recipient": "TAO",
+      "tracking_number": "TAO-006"
+    },
+    {
+      "timestamp": "2024-03-15T07:50:00Z",
+      "event_type": "communication",
+      "description": "TAO to CO: Recommend coming to course 315 to open range and deploy towed array",
+      "speaker": "TAO",
+      "recipient": "CO",
+      "tracking_number": "TAO-007"
+    },
+    {
+      "timestamp": "2024-03-15T07:52:00Z",
+      "event_type": "course_change",
+      "description": "Course change to 315 degrees as recommended by TAO",
+      "course": 315,
+      "previous_course": 090,
+      "tracking_number": "TAO-008",
+      "ordered_by": "CO"
+    },
+    {
+      "timestamp": "2024-03-15T08:05:00Z",
+      "event_type": "equipment_deployment",
+      "description": "Towed array sonar deployed",
+      "equipment": "TB-37 Towed Array",
+      "tracking_number": "TAO-009"
+    },
+    {
+      "timestamp": "2024-03-15T08:30:00Z",
+      "event_type": "communication",
+      "description": "TAO to Bridge: Contact Sierra-1 confirmed submarine, Soviet KILO-class diesel",
+      "speaker": "TAO",
+      "recipient": "Bridge",
+      "tracking_number": "TAO-010",
+      "classification": "KILO-class SSK"
+    },
+    {
+      "timestamp": "2024-03-15T08:35:00Z",
+      "event_type": "communication",
+      "description": "TAO: Request weapons release authority for exercise torpedo",
+      "speaker": "TAO",
+      "recipient": "CO",
+      "tracking_number": null,
+      "notes": "Critical request without tracking number - MAJOR VIOLATION"
+    },
+    {
+      "timestamp": "2024-03-15T08:37:00Z",
+      "event_type": "communication",
+      "description": "CO to TAO: Weapons release authorized for exercise ADCAP",
+      "speaker": "CO",
+      "recipient": "TAO",
+      "tracking_number": "TAO-011",
+      "authorization": "Weapons Free - Exercise Only"
+    },
+    {
+      "timestamp": "2024-03-15T08:40:00Z",
+      "event_type": "weapons_release",
+      "description": "Exercise torpedo away, targeting Sierra-1",
+      "weapon": "MK-48 ADCAP (Exercise)",
+      "target": "Sierra-1",
+      "tracking_number": "TAO-012",
+      "fire_control_solution": "Valid"
+    },
+    {
+      "timestamp": "2024-03-15T08:45:00Z",
+      "event_type": "communication",
+      "description": "TAO to CO: Torpedo running hot, straight, and normal",
+      "speaker": "TAO",
+      "recipient": "CO",
+      "tracking_number": "TAO-013"
+    },
+    {
+      "timestamp": "2024-03-15T08:52:00Z",
+      "event_type": "exercise_result",
+      "description": "Exercise torpedo achieved simulated hit on Sierra-1",
+      "result": "Kill",
+      "tracking_number": "TAO-014"
+    },
+    {
+      "timestamp": "2024-03-15T09:00:00Z",
+      "event_type": "communication",
+      "description": "TAO to all stations: Secure from ASW exercise, well done",
+      "speaker": "TAO",
+      "recipient": "All Stations",
+      "tracking_number": null,
+      "notes": "General announcement without tracking"
+    },
+    {
+      "timestamp": "2024-03-15T09:15:00Z",
+      "event_type": "status_change",
+      "description": "Returned to Condition IV normal steaming",
+      "tracking_number": "TAO-015",
+      "previous_status": "Condition III",
+      "new_status": "Condition IV"
+    },
+    {
+      "timestamp": "2024-03-15T10:30:00Z",
+      "event_type": "communication",
+      "description": "TAO to CO: New surface contact bearing 180, range 12000 yards",
+      "speaker": "TAO",
+      "recipient": "CO",
+      "tracking_number": "TAO-016",
+      "contact_designation": "Master-1"
+    },
+    {
+      "timestamp": "2024-03-15T10:45:00Z",
+      "event_type": "communication",
+      "description": "TAO: Master-1 identified as merchant vessel via AIS",
+      "speaker": "TAO",
+      "recipient": "CO",
+      "tracking_number": "TAO-017",
+      "vessel_name": "MV Pacific Trader",
+      "vessel_type": "Container Ship"
+    },
+    {
+      "timestamp": "2024-03-15T12:00:00Z",
+      "event_type": "watch_change",
+      "description": "TAO watch turnover: LT Chen relieving LT Park",
+      "tracking_number": "TAO-018",
+      "outgoing": "LT Park",
+      "incoming": "LT Chen"
+    },
+    {
+      "timestamp": "2024-03-15T14:00:00Z",
+      "event_type": "communication",
+      "description": "TAO to CO: Recommend setting flight quarters for helo ops",
+      "speaker": "TAO",
+      "recipient": "CO",
+      "notes": "Missing tracking number for flight quarters recommendation"
+    },
+    {
+      "timestamp": "2024-03-15T14:15:00Z",
+      "event_type": "flight_operations",
+      "description": "Flight quarters set, MH-60R launched for surface search",
+      "aircraft": "MH-60R Seahawk",
+      "tracking_number": "TAO-019",
+      "mission": "Surface Search"
+    }
+  ],
+  "summary": "ASW exercise against simulated KILO-class submarine. Successful prosecution and simulated kill achieved. Multiple communications tracking violations noted during high-tempo operations."
+}
