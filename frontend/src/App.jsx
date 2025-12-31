@@ -43,7 +43,7 @@ function App() {
             <circle cx="20" cy="20" r="4" fill="white"/>
           </svg>
         </div>
-        <h1>i4NS LENS</h1>
+        <h1>LENS</h1>
         <p className="subtitle">Lessons Learned Enhancement System</p>
       </header>
 
