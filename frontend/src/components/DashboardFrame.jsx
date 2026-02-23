@@ -156,17 +156,7 @@ function DashboardFrame({ analysis, previousMissions, onBack, onMissionSelect })
               </div>
             </section>
 
-            {/* Lessons Learned */}
-            <section className="lessons-section">
-              <h4>Lessons Learned</h4>
-              <ul className="lessons-list">
-                {analysis.lessons_learned.map((lesson, idx) => (
-                  <li key={idx}>{lesson}</li>
-                ))}
-              </ul>
-            </section>
-
-            {/* Recommendations */}
+{/* Recommendations */}
             <section className="recommendations-section">
               <h4>Recommendations</h4>
               <ul className="recommendations-list">

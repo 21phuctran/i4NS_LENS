@@ -44,7 +44,6 @@ function App() {
           </svg>
         </div>
         <h1>LENS</h1>
-        <p className="subtitle">Lessons Learned Enhancement System</p>
       </header>
 
       <main className="app-main">
@@ -60,9 +59,6 @@ function App() {
         )}
       </main>
 
-      <footer className="app-footer">
-        <p>U.S. Navy - Offline Deployment Ready</p>
-      </footer>
     </div>
   )
 }

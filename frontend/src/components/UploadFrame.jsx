@@ -85,7 +85,7 @@ function UploadFrame({ onAnalysisComplete }) {
     <div className="upload-frame">
       <div className="welcome-section">
         <h2>Welcome! Press button below to summarize</h2>
-        <p>Upload mission logs to analyze against Navy doctrine and generate lessons learned</p>
+        <p>Upload mission logs to analyze against Navy doctrines</p>
       </div>
 
       <div className="upload-section">
